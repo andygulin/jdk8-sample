@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>jdk8.sample</groupId>
+	<artifactId>jdk8-sample</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>jdk8-sample</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<compile.level>1.8</compile.level>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<junit.version>4.12</junit.version>
+
+		<maven-compiler-plugin.version>3.5</maven-compiler-plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${compile.level}</source>
+					<target>${compile.level}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+
+					<fork>true</fork>
+					<meminitial>128m</meminitial>
+					<maxmem>512m</maxmem>
+					<optimize>true</optimize>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
